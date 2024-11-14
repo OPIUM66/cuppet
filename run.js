@@ -29,7 +29,8 @@ const startApplications = () => {
   startProcess('node', ['./server/server.js'], 'Server');
 
   console.log("🔰 Starting dashboard application...");
-  startProcessSilent('npm run chat');
+  startProcessSilent('cd ./chat && npm start');
+
 };
 
 startApplications();
