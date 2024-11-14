@@ -22,6 +22,9 @@ const installDependencies = async () => {
     console.log("🔰 Installing dependencies in chat/");
     await runCommand('npm install', './chat');
 
+    console.log("🔰 Installing tools in cuppet/");
+    await runCommand('npm install', './cuppet');
+
     console.log("🆗 All dependencies installed.");
   } catch (error) {
     console.error("💢 Installation failed:", error);
