@@ -1,0 +1,23 @@
+{
+  "name": "dorna-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@gradio/client": "^1.1.1"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "node-polyfill-webpack-plugin": "^4.0.0",
+    "webpack": "^5.92.0",
+    "wrangler": "^3.60.2"
+  }
+}

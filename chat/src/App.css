@@ -1,0 +1,272 @@
+/* Import Vazir font from CDN */
+@import url('https://v1.fontapi.ir/css/Vazir');
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #2c2f33;
+  color: #dcdcdc;
+}
+* {
+  font-family: 'vazir', sans-serif;
+}
+.App {
+  display: flex;
+  height: 100vh;
+  direction: rtl;
+}
+.sidebar {
+  width: 50%;
+  background-color: #23272a;
+  padding: 50px;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
+}
+.scrape-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #a29bfe;
+  border: none;
+  color: #23272a;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: 400;
+  font-size: 16px;
+}
+.scrape-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+.project-list {
+  margin-top: 20px;
+  overflow-y: auto;
+  max-height: calc(90vh - 70px);
+  padding-left: 25px;
+}
+.project-item {
+  background-color: #3a3e45;
+  padding: 10px;
+  margin-bottom: 25px;
+  border-radius: 6px;
+}
+.project-item h4 {
+  color: #a29bfe;
+  margin: 0;
+}
+.project-item p {
+  margin: 4px 0;
+  color: #dcdcdc;
+}
+.send-bid-button {
+  background-color: #5c6bc0;
+  color: #fff;
+  border: none;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 8px;
+}
+.bid-form {
+  flex-grow: 1;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  background-color: #2c2f33;
+  align-items: center;
+  width: 30%;
+
+}
+
+button svg {
+  margin: 0 10px;
+  margin-bottom: -1px;
+  line-height: 0;
+}
+.bid-form h4 span {
+  font-weight: 100;
+}
+.bid-form p {
+  font-weight: 100;
+  margin-bottom: 0;
+}
+.bid-form textarea,
+.bid-form input {
+  width: calc(100% - 8px);
+  margin: 6px 0;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #1d1d1d;
+  background-color: #23272a;
+  color: #dcdcdc;
+  outline: none;
+}
+.bid-form button.cancel {
+  background-color: unset;
+  color: #a29bfe;
+  border: 1px solid #a29bfe;
+}
+.bid-form button {
+  background-color: #a29bfe;
+  color: #23272a;
+  padding: 8px;
+  margin: 10px 0;
+  width: calc(100% + 8px);  border-radius: 6px;
+  cursor: pointer;
+}
+.chat-container {
+  flex-grow: 1;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  background-color: #2c2f33;
+  width: 50%;
+}
+h1 {
+  color: #a29bfe;
+  position: absolute;
+  text-align: center;
+  left: 50px;
+  top: 25px;
+}
+.chat-history {
+  flex-grow: 1;
+  overflow-y: auto;
+  background-color: #23272a;
+  padding: 20px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+.message {
+  background-color: #5c6bc0;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+.loading-message {
+  text-align: center;
+  color: #c9c5fa;
+}
+.input-container {
+  display: flex;
+  align-items: center;
+}
+input[type="text"] {
+  flex-grow: 1;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #3a3e45;
+  background-color: #3a3e45;
+  color: #dcdcdc;
+  font-weight: 100;
+  margin-left: 15px;
+  outline: none;
+
+}
+button {
+  padding: 10px;
+  padding-right: 20px;
+  border-radius: 6px;
+  background-color: #a29bfe;
+  color: #23272a;
+  border: none;
+  cursor: pointer;
+
+}
+button.ai-button {
+  background-color: #5c6bc0;
+}
+
+
+/* General scrollbar styling for Webkit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #2c2f33; /* Background of the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #5c6bc0; /* Scrollbar thumb color */
+  border-radius: 4px;
+  border: 2px solid #2c2f33; /* Adds padding around the thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #81a1ff; /* Hover color for scrollbar thumb */
+}
+
+/* Firefox scrollbar styling */
+* {
+  scrollbar-width: thin; /* Makes the scrollbar thin */
+  scrollbar-color: #5c6bc0 #2c2f33; /* Thumb and track colors */
+
+}
+body {
+  overflow: hidden;
+}
+
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color:  #5c6bc09d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 100;
+  pointer-events: none;
+}
+
+/* From Uiverse.io by adamgiebl */ 
+.dots-container {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.dot {
+  height: 20px;
+  width: 20px;
+  margin-right: 10px;
+  border-radius: 10px;
+  background-color: #5c6bc0;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+.dot:last-child {
+}
+
+.dot:nth-child(1) {
+  animation-delay: -0.3s;
+}
+
+.dot:nth-child(2) {
+  animation-delay: -0.1s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.1s;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.8);
+    background-color: #ffffff;
+    box-shadow: 0 0 0 0 rgba(178, 212, 252, 0.7);
+  }
+
+  50% {
+    transform: scale(1.2);
+    background-color: #ffffff;
+    box-shadow: 0 0 0 10px rgba(178, 212, 252, 0);
+  }
+
+  100% {
+    transform: scale(0.8);
+    background-color: #5c6bc0;
+    box-shadow: 0 0 0 0 rgba(178, 212, 252, 0.7);
+  }
+}
