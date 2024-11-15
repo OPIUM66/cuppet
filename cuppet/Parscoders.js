@@ -5,7 +5,7 @@ const Cuppet = require('./Cuppet');
 const { HOME_URL, LOGIN_URL, DASHBOARD_URL, PROJECT_URL, DOMAIN_URL } = require('./config');
 const History = require('./History');
 const { env } = require('process');
-const { ask } = require('./ask');
+const profile  = require('../profile.json');
  
 // ! TODO: CLEAN THIS MESS UP
 
@@ -114,7 +114,7 @@ class ParsCodersScrapper {
             };
         }
     }
-    async extractProjects(PROJECT_PAGE = PROJECT_URL) {
+    async extractProjects(PROJECT_PAGE = PROJECT_URL , to = 1) {
         const cacheCookies = await this.cacheLogin();
         await this.startFromCookie(cacheCookies, PROJECT_PAGE);
 
@@ -241,10 +241,10 @@ class ParsCodersScrapper {
     }
     async loginAndGetCookie() {
         try {
-
-            if (!env.USERNAME || !env.PASSWORD) {
-                console.log('Please set USERNAME and PASSWORD inside .env file like example to begin.');
-                
+            const USERNAME = profile.USERNAME
+            const PASSWORD = profile.PASSWORD
+            if (!USERNAME || !PASSWORD) {
+                console.log('Please set USERNAME and PASSWORD to begin.');
             }
 
             await this.driver.get(LOGIN_URL);
@@ -254,8 +254,8 @@ class ParsCodersScrapper {
                 .id('password'));
 
 
-            await usernameInput.sendKeys(env.USERNAME);
-            await passwordInput.sendKeys(env.PASSWORD);
+            await usernameInput.sendKeys(USERNAME);
+            await passwordInput.sendKeys(PASSWORD);
 
             await this.driver.sleep(2000);
 
